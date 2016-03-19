@@ -15,13 +15,13 @@ layout: default
 {% endif %}
 
 <div id="post-container" class="container">
-    {% capture toc %}{{ page.content | fancytoc }}{% endcapture %}
+    {% capture toc %}{{ page.content | toc }}{% endcapture %}
 
     {% if page.noToc == nil and toc != '' %}
 
     <div class="row">
         <div class="col-md-3">
-            <div class="post-toc">{{ toc }}</div>
+            <div class="post-toc">{{ :toc }}</div>
         </div>
         <div class="col-md-9">
 

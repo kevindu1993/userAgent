@@ -145,20 +145,70 @@
 
     <div class="row">
         <div class="col-md-3">
-            <div class="post-toc"><ul class="nav">
-<li>
-<a href="#下载">下载</a>
-</li>
-<li>
-<a href="#文件结构">文件结构</a>
-</li>
-<li>
-<a href="#简单测试">简单测试</a>
-</li>
-<li>
-<a href="#调用方式">调用方式</a>
-</li>
-</ul>
+            <div class="post-toc">## 下载
+
+```bash
+git clone http://gitlab.baidu.com/fex/dp.git
+```
+
+## 文件结构
+
+```
+├─ node_modules
+├──── useragent.js
+├──── useragent_base.js
+└─ test.js
+```
+## 简单测试
+
+```bash
+cd userAgent
+node test.js
+```
+
+## 调用方式
+
+```javascript
+var UA = require("useragent");
+var test_ua_str = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3';
+
+var result = new UA(test_ua_str);
+```
+
+通过这种方式即可完成对UA数据的解析。
+可得到以下有用信息:
+
+```javascript
+{
+    browser: {  //浏览器信息
+        name: 'Chrome',
+        version: {
+            original: '19.0.1084.60',
+        }
+    },
+    engine: {   //浏览器内核
+        name: 'Webkit',
+        version: {
+            original: '534.46.0',
+        }
+    },
+    os: {       //操作系统
+        name: 'iOS',
+        version: {
+            original: '5.1.1',
+        }
+    },
+    device: {   //硬件信息
+        type: 'mobile',
+        manufacturer: 'Apple',
+        model: 'IPHONE'
+    }
+}
+```
+
+
+
+
 </div>
         </div>
         <div class="col-md-9">
@@ -166,53 +216,68 @@
             
 
             <div class="page-container">
-                <h2 id="下载">下载</h2>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone http://gitlab.baidu.com/fex/dp.git
-</code></pre></div>
-<h2 id="文件结构">文件结构</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">├─ node_modules
+                <h2 id="section">下载</h2>
+
+<p><code class="highlighter-rouge">bash
+git clone http://gitlab.baidu.com/fex/dp.git
+</code></p>
+
+<h2 id="section-1">文件结构</h2>
+
+<p><code class="highlighter-rouge">
+├─ node_modules
 ├──── useragent.js
 ├──── useragent_base.js
 └─ test.js
-</code></pre></div>
-<h2 id="简单测试">简单测试</h2>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>userAgent
-node test.js
-</code></pre></div>
-<h2 id="调用方式">调用方式</h2>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">UA</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"useragent"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">test_ua_str</span> <span class="o">=</span> <span class="s1">'Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3'</span><span class="p">;</span>
+</code>
+## 简单测试</p>
 
-<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UA</span><span class="p">(</span><span class="nx">test_ua_str</span><span class="p">);</span>
-</code></pre></div>
+<p><code class="highlighter-rouge">bash
+cd userAgent
+node test.js
+</code></p>
+
+<h2 id="section-2">调用方式</h2>
+
+<p>```javascript
+var UA = require(“useragent”);
+var test_ua_str = ‘Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3’;</p>
+
+<p>var result = new UA(test_ua_str);
+```</p>
+
 <p>通过这种方式即可完成对UA数据的解析。
 可得到以下有用信息:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-    <span class="nl">browser</span><span class="p">:</span> <span class="p">{</span>  <span class="c1">//浏览器信息</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="s1">'Chrome'</span><span class="p">,</span>
-        <span class="nx">version</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nl">original</span><span class="p">:</span> <span class="s1">'19.0.1084.60'</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">engine</span><span class="err">:</span> <span class="p">{</span>   <span class="c1">//浏览器内核</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="s1">'Webkit'</span><span class="p">,</span>
-        <span class="nx">version</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nl">original</span><span class="p">:</span> <span class="s1">'534.46.0'</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">os</span><span class="err">:</span> <span class="p">{</span>       <span class="c1">//操作系统</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="s1">'iOS'</span><span class="p">,</span>
-        <span class="nx">version</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nl">original</span><span class="p">:</span> <span class="s1">'5.1.1'</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">device</span><span class="err">:</span> <span class="p">{</span>   <span class="c1">//硬件信息</span>
-        <span class="nl">type</span><span class="p">:</span> <span class="s1">'mobile'</span><span class="p">,</span>
-        <span class="nx">manufacturer</span><span class="err">:</span> <span class="s1">'Apple'</span><span class="p">,</span>
-        <span class="nx">model</span><span class="err">:</span> <span class="s1">'IPHONE'</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+
+<p><code class="highlighter-rouge">javascript
+{
+    browser: {  //浏览器信息
+        name: 'Chrome',
+        version: {
+            original: '19.0.1084.60',
+        }
+    },
+    engine: {   //浏览器内核
+        name: 'Webkit',
+        version: {
+            original: '534.46.0',
+        }
+    },
+    os: {       //操作系统
+        name: 'iOS',
+        version: {
+            original: '5.1.1',
+        }
+    },
+    device: {   //硬件信息
+        type: 'mobile',
+        manufacturer: 'Apple',
+        model: 'IPHONE'
+    }
+}
+</code></p>
+
+
             </div>
 
             

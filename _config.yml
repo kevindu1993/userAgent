@@ -1,6 +1,5 @@
 name: UserAgent.js
 markdown: kramdown
-# pygments: true
 baseurl: /userAgent
 exclude:
   - node_modules
