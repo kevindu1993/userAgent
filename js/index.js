@@ -106,7 +106,6 @@
         var ua_device_manufacturer = res_ua['device']['manufacturer'] || '-';
 
         var device_icon = '';
-        console.log(ua_device_type)
         if(ua_device_type == 'desktop'){
             if(tmp_os_name == 'mac') {
                 device_icon = 'pc_mac.png';
