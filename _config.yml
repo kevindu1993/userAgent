@@ -1,9 +1,5 @@
 name: UserAgent.js
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - with_toc_data
-    - html_toc
+markdown: kramdown
 # pygments: true
 baseurl: /userAgent
 exclude:

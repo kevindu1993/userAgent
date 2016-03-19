@@ -16,13 +16,18 @@ scripts:
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <div class="container">
+    <div class="container" style="display:inline-block;width:1000px;float:left;">
         <h2 style="font-size:50px;">UserAgent.js</h2>
         <p>
           UserAgent.js是由Baidu WebFE(FEX)团队开发的一个用于解析UA来得到用户终端信息的JS框架。
         </p>
-
     </div>
+    <div style="display:inline-block;float:left;margin-top:20px;">
+    <img src="{{ site.baseurl }}/images/qrcode.jpg" alt="..." class="uaForPhone">
+    <div style="color:white;font-size:12px;text-align: center;">扫一扫测试</div>
+  </div>
+      <div style="clear:both;"></div>
+
 </div>
 
 
@@ -35,7 +40,7 @@ scripts:
       <div id="ua_browser" class="col-lg-3">
         <h2 class="ua_text">浏览器名称</h2>
         <div class="ua_logo">
-          <img scr="http://127.0.0.1:4000{{ site.baseurl }}/images/chrome.png" width="64" height="64">
+          <img scr="{{ site.baseurl }}/images/chrome.png" width="64" height="64">
         </div>
         <h4 class="ua_item_name"></h4>
         <h4 class="ua_item_version"></h4>
