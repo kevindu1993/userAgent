@@ -15,16 +15,9 @@ layout: default
 {% endif %}
 
 <div id="post-container" class="container">
-    {% capture toc %}{{ page.content | toc }}{% endcapture %}
-
-    {% if page.noToc == nil and toc != '' %}
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="post-toc">{{ :toc }}</div>
-        </div>
-        <div class="col-md-9">
-
+        <div class="col-md-12">
             {% if page.hideTitle == nil %}
             <div class="page-header">
               <h1>{{ page.title }}</h1>
