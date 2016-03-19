@@ -5,7 +5,7 @@ redcarpet:
     - with_toc_data
     - html_toc
 # pygments: true
-baseurl: /useragentJS
+baseurl: /userAgent
 exclude:
   - node_modules
   - README.md
