@@ -1,0 +1,6 @@
+name: UserAgent.js
+markdown: kramdown
+baseurl: /userAgent
+exclude:
+  - node_modules
+  - README.md

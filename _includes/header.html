@@ -1,0 +1,32 @@
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand logo{% if page.url == '/' %} active {% endif%}" href="{{ site.baseurl }}/">
+                <span class="fa fa-chrome "></span><b>UserAgent.js</b></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {% for weight in (1..10) %} 
+                    {% for post in site.pages %} 
+                        {% if post.group == 'nav' and post.weight == weight %} 
+                            {% if page.url == post.url %}
+                                <li class="active"><a href="{{ site.baseurl }}{{post.url}}" class="active">{{post.navName}}</a></li>
+                            {% else %}
+                                <li><a href="{{ site.baseurl }}/{{ post.navUrl }}">{{ post.navName }}</a></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                
+                <li><a target="_blank" href="https://github.com/fex-team/userAgent/issues?labels=faq&amp;page=1&amp;state=open">FAQ</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a target="_blank" href="https://github.com/fex-team/userAgent">Github</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
